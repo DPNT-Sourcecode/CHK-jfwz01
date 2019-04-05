@@ -1,5 +1,5 @@
 # noinspection PyShadowingBuiltins,PyUnusedLocal
-def sum(x, y):
+def compute(x, y):
     """ Calculates the sum between 2 positive integers.
     :param x: first number in the sum calculation.
     :type x: int
@@ -8,4 +8,5 @@ def sum(x, y):
     :return: sum between x and y
     """
     return x + y
+
 
