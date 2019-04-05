@@ -8,5 +8,3 @@ def compute(x, y):
     :return: sum between x and y
     """
     return x + y
-
-
