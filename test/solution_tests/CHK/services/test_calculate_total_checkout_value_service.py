@@ -35,7 +35,7 @@ class TestCalculateTotalCheckoutValueService(TestCase):
         self.assertEqual(returned_value, expected_value)
 
     def test_with_input_values_all_multiple(self):
-        input_values = ['3A', '2B', '2C', '2C', '2D']
+        input_values = ['3A', '2B', '2C', '2D']
         # 130 + 45 + 40 + 30
         expected_value = 245
 
@@ -43,4 +43,5 @@ class TestCalculateTotalCheckoutValueService(TestCase):
         returned_value = service.call()
 
         self.assertEqual(returned_value, expected_value)
+
 
