@@ -1,11 +1,10 @@
-from unittest import TestCase
 from lib.solutions.CHK.services.calculate_total_checkout_value_service import CalculateTotalCheckoutValue
 from lib.solutions.CHK.models.stock_keeping_unit import StockKeepUnit
 from lib.solutions.CHK.models.supermarket import SuperMarket
 
 
-class TestCalculateTotalCheckoutValueService(TestCase):
-    def setUp(self):
+class TestCalculateTotalCheckoutValueService:
+    def __init__(self):
         item_a = StockKeepUnit('A', 50, {3: 130})
         item_b = StockKeepUnit('B', 30, {2: 45})
         item_c = StockKeepUnit('C', 20, {})
@@ -22,7 +21,7 @@ class TestCalculateTotalCheckoutValueService(TestCase):
         service = CalculateTotalCheckoutValue(input_values, self.mock_supermarket)
         returned_value = service.call()
 
-        self.assertEqual(returned_value, expected_value)
+        assert returned_value, expected_value
 
     def test_with_input_values_single_and_multiple(self):
         input_values = ['3A', 'B', '2C', 'C']
@@ -32,7 +31,7 @@ class TestCalculateTotalCheckoutValueService(TestCase):
         service = CalculateTotalCheckoutValue(input_values, self.mock_supermarket)
         returned_value = service.call()
 
-        self.assertEqual(returned_value, expected_value)
+        assert returned_value, expected_value
 
     def test_with_input_values_all_multiple(self):
         input_values = ['3A', '2B', '2C', '2D']
@@ -42,6 +41,7 @@ class TestCalculateTotalCheckoutValueService(TestCase):
         service = CalculateTotalCheckoutValue(input_values, self.mock_supermarket)
         returned_value = service.call()
 
-        self.assertEqual(returned_value, expected_value)
+        assert returned_value, expected_value
+
 
 
