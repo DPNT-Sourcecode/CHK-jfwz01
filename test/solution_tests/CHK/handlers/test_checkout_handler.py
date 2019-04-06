@@ -12,12 +12,24 @@ class TestCheckoutHandler:
 
         self.mock_supermarket = SuperMarket([item_a, item_b, item_c, item_d])
 
-    def test_calculate_invalid_input(self):
-        """ Tests the checkout handler calculate function with invalid input
+    def test_calculate_invalid_input_only_numbers(self):
+        """ Tests the checkout handler calculate function with only numbers input.
 
-        For invalid input it should return -1.
+        Since it's invalid it should return -1
         """
         mock_input = '123'
+        expected_return_value = -1
+
+        returned_value = CheckoutHandler.calculate(mock_input, self.mock_supermarket)
+
+        assert expected_return_value == returned_value
+
+    def test_calculate_invalid_input_lowercases(self):
+        """ Tests the checkout handler calculate function with lowercase letters.
+
+        Since it's invalid it should return -1.
+        """
+        mock_input = 'ABCDa'
         expected_return_value = -1
 
         returned_value = CheckoutHandler.calculate(mock_input, self.mock_supermarket)
@@ -47,4 +59,5 @@ class TestCheckoutHandler:
         returned_value = CheckoutHandler.calculate(mock_input, self.mock_supermarket)
 
         assert expected_return_value == returned_value
+
 
