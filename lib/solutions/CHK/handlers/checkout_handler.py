@@ -16,8 +16,10 @@ class CheckoutHandler(object):
         checkout_input_values = GetInpuValuesService(checkout_input).call()
 
         # invalid input
-        if len(checkout_input_values) == 0:
-            return -1
+        for checkout_input_value in checkout_input_values:
+            if len(checkout_input_value) > 2:
+                return -1
 
         return CalculateTotalCheckoutValue(checkout_input_values, supermarket).call()
+
 
