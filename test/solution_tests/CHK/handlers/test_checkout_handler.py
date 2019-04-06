@@ -41,9 +41,10 @@ class TestCheckoutHandler:
 
         For the mock input provided it should return 50+45+20=115.
         """
-        mock_input = 'A 2B C'
+        mock_input = 'A2BC'
         expected_return_value = 115
 
         returned_value = CheckoutHandler.calculate(mock_input, self.mock_supermarket)
 
         assert expected_return_value == returned_value
+

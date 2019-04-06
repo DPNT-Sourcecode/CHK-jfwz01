@@ -9,7 +9,7 @@ class TestGetInputValuesService:
         Example:
             For a valid input like 'A, 2A, 3B' it should return ['A', '2A', '3B']
         """
-        valid_input = 'A, 2A, 3B, C, D,'
+        valid_input = 'A2A3BCD,'
         expected_return_value = ['A', '2A', '3B', 'C', 'D']
 
         service = GetInpuValuesService(valid_input)
@@ -22,10 +22,11 @@ class TestGetInputValuesService:
 
         The service should return an empty list.
         """
-        invalid_input = '1 123 31312'
+        invalid_input = '112331312'
         expected_return_value = []
 
         service = GetInpuValuesService(invalid_input)
         returned_value = service.call()
 
         assert expected_return_value == returned_value
+
