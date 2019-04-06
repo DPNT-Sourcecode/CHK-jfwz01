@@ -18,12 +18,11 @@ class CheckoutHandler(object):
         # return 0 for empty input
         if checkout_input == '':
             return 0
-        # reuturn -1 for invalid input
-        if checkout_input.isdigit():
-            return -1
-        if not re.match("^[A-Z0-9]*$", checkout_input):
+        # return -1 for invalid input
+        if not re.match("^[A-Z]*$", checkout_input):
             return -1
 
-        checkout_input_values = GetInpuValuesService(checkout_input).call()
+        checkout_item_count = GetInpuValuesService(checkout_input).call()
 
         return CalculateTotalCheckoutValue(checkout_input_values, supermarket).call()
+
