@@ -1,6 +1,6 @@
 import re
 
-from solutions.CHK.services.get_input_values_service import GetInpuValuesService
+from solutions.CHK.services.get_item_count_service import GetItemCountService
 from solutions.CHK.services.calculate_total_checkout_value_service import CalculateTotalCheckoutValue
 
 
@@ -25,3 +25,4 @@ class CheckoutHandler(object):
         checkout_items_count = GetInpuValuesService(checkout_input).call()
 
         return CalculateTotalCheckoutValue(checkout_items_count, supermarket).call()
+

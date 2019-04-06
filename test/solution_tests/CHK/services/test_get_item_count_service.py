@@ -1,9 +1,10 @@
 from lib.solutions.CHK.services.get_item_count_service import GetItemCountService
 
 
-class TestGetInputValuesService:
-    def test_get_input_values_with_a_single_item(self):
+class TestGetItemCountService:
+    def test_get_item_count_with_a_single_item(self):
         """ Tests the GetInputValuesService when provided with a single item
+
 
         The service should return a dict containing the single item
         Example:
@@ -17,7 +18,7 @@ class TestGetInputValuesService:
 
         assert expected_return_value == returned_value
 
-    def test_get_input_values_with_multiple_items(self):
+    def test_get_item_count_with_multiple_items(self):
         """ Tests the GetInputValuesService when provided with a multiple items input
 
         The service should return a dict containing the count of each item
@@ -31,4 +32,5 @@ class TestGetInputValuesService:
         returned_value = service.call()
 
         assert expected_return_value == returned_value
+
 

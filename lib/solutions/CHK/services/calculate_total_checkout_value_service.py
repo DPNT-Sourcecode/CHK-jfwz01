@@ -20,13 +20,6 @@ class CalculateTotalCheckoutValue(object):
                 break
             if not item.special_offers:
                 total_checkout_value += item.price * count
-            else:
-
-
-
         return total_checkout_value
 
-    def _total_price_with_special_offer(self, item, count):
-        total_price = 0
 
-        while count >= item.sp
