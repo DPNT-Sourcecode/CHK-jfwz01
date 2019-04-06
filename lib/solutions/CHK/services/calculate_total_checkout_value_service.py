@@ -48,4 +48,3 @@ class CalculateTotalCheckoutValue(object):
                 return stock_keeping_unit.special_offers[quantity]
             return stock_keeping_unit.price * quantity
         return 0
-
