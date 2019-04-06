@@ -53,4 +53,3 @@ class TestCalculateTotalCheckoutValueService:
         returned_value = service.call()
 
         assert returned_value, expected_value
-

@@ -20,6 +20,3 @@ class CheckoutHandler(object):
         # other symbols
 
         return CalculateTotalCheckoutValue(checkout_input_values, supermarket).call()
-
-
-

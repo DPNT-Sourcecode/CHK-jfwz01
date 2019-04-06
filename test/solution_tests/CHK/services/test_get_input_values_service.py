@@ -29,4 +29,3 @@ class TestGetInputValuesService:
         returned_value = service.call()
 
         assert expected_return_value == returned_value
-
