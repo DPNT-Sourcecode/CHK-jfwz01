@@ -19,4 +19,5 @@ class CheckoutHandler(object):
         # lowercase
         # other symbols
 
+
         return CalculateTotalCheckoutValue(checkout_input_values, supermarket).call()
