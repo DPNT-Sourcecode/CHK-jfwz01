@@ -1,6 +1,5 @@
-from lib.solutions.CHK.models.supermarket import SuperMarket
-from lib.solutions.CHK.models.stock_keeping_unit import StockKeepUnit
-from lib.solutions.CHK.handlers.checkout_handler import CheckoutHandler
+from solutions.CHK.models.supermarket import SuperMarket
+from solutions.CHK.models.stock_keeping_unit import StockKeepUnit
 
 
 # noinspection PyUnusedLocal
@@ -17,4 +16,5 @@ def checkout(skus):
     supermarket.add_several_stock_keeping_units([item_a, item_b, item_c, item_d])
 
     raise NotImplementedError()
+
 
