@@ -22,7 +22,8 @@ class CheckoutHandler(object):
         if not re.match("^[A-Z]*$", checkout_input):
             return -1
 
-        checkout_item_count = GetInpuValuesService(checkout_input).call()
+        checkout_items_count = GetInpuValuesService(checkout_input).call()
 
-        return CalculateTotalCheckoutValue(checkout_input_values, supermarket).call()
+        return CalculateTotalCheckoutValue(checkout_items_count, supermarket).call()
+
 
