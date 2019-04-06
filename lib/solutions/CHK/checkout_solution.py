@@ -7,4 +7,3 @@ def checkout(skus):
     stock_keeping_units = []
 
     raise NotImplementedError()
-

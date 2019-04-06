@@ -16,6 +16,3 @@ class GetInpuValuesService(object):
     def call(self):
         split_input_values_regex = re.compile('[0-9]*[A-Z]')
         return split_input_values_regex.findall(self.input_line)
-
-
-
