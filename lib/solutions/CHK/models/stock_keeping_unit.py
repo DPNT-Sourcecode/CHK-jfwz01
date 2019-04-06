@@ -12,4 +12,3 @@ class StockKeepUnit(object):
         self.name = name
         self.price = price
         self.special_offers = special_offers
-

@@ -5,4 +5,3 @@ class CheckoutHandler(object):
     @classmethod
     def checkout(cls, input, supermarket):
         input_values = GetInpuValuesService(input).call()
-

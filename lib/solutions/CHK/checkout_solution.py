@@ -16,5 +16,3 @@ def checkout(skus):
     supermarket.add_several_stock_keeping_units([item_a, item_b, item_c, item_d])
 
     raise NotImplementedError()
-
-
