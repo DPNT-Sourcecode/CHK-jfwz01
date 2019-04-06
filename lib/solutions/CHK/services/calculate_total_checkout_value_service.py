@@ -30,5 +30,3 @@ class CalculateTotalCheckoutValue(object):
         total_price = 0
 
         while count >= item.sp
-
-

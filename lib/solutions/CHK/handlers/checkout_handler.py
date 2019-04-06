@@ -25,5 +25,3 @@ class CheckoutHandler(object):
         checkout_items_count = GetInpuValuesService(checkout_input).call()
 
         return CalculateTotalCheckoutValue(checkout_items_count, supermarket).call()
-
-
