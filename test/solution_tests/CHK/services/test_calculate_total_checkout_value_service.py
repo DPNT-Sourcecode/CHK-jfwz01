@@ -10,7 +10,6 @@ class TestCalculateTotalCheckoutValueService:
         item_c = StockKeepUnit('C', 20, {})
         item_d = StockKeepUnit('D', 15, {})
 
-        self.mock_input_values_all_multiple = ['2A', '2B', '2C', '2C']
         self.mock_supermarket = SuperMarket([item_a, item_b, item_c, item_d])
 
     def test_with_input_values_all_single_quantity(self):
@@ -54,3 +53,4 @@ class TestCalculateTotalCheckoutValueService:
         returned_value = service.call()
 
         assert returned_value, expected_value
+
