@@ -5,8 +5,8 @@ class SuperMarket(object):
     Attributes:
         stock_keeping_units(list(<StockKeepingUnit>): contains information about several supermarket items.
     """
-    def __init__(self):
-        self.stock_keeping_units = []
+    def __init__(self, stock_keeping_units):
+        self.stock_keeping_units = stock_keeping_units
 
     def add_stock_keeping_unit(self, stock_keeping_unit):
         """ Appends a new stock_keeping_unit to the supermark list of stock_keeping_units
@@ -32,3 +32,4 @@ class SuperMarket(object):
             if stock_keeping_unit.name == name:
                 return stock_keeping_unit
         return None
+

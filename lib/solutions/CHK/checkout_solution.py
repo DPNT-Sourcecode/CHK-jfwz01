@@ -12,7 +12,7 @@ def checkout(skus):
     item_d = StockKeepUnit('D', 15, {})
 
     # create supermarket
-    supermarket = SuperMarket()
-    supermarket.add_several_stock_keeping_units([item_a, item_b, item_c, item_d])
+    supermarket = SuperMarket([item_a, item_b, item_c, item_d])
 
     raise NotImplementedError()
+
