@@ -12,7 +12,11 @@ class TestCheckoutHandler:
 
         self.mock_supermarket = SuperMarket([item_a, item_b, item_c, item_d])
 
-    def test_invalid_input(self):
+    def test_calculate_invalid_input(self):
+        """ Tests the checkout handler calculate function with invalid input
+
+        For invalid input it should return -1.
+        """
         mock_input = '123'
         expected_return_value = -1
 
@@ -20,7 +24,11 @@ class TestCheckoutHandler:
 
         assert expected_return_value == returned_value
 
-    def test_valid_input_single_item(self):
+    def test_calculate_valid_input_single_item(self):
+        """ Tests the checkout handler calculate function a single item in the input.
+
+        For the mock input provided it should return 50.
+        """
         mock_input = 'A'
         expected_return_value = 50
 
@@ -28,10 +36,15 @@ class TestCheckoutHandler:
 
         assert expected_return_value == returned_value
 
-    def test_valid_input_multiple_items(self):
+    def test_calculate_valid_input_multiple_items(self):
+        """ Tests the checkout handler calculate function a multiple items in the input.
+
+        For the mock input provided it should return 50+45+20=115.
+        """
         mock_input = 'A 2B C'
         expected_return_value = 115
 
         returned_value = CheckoutHandler.calculate(mock_input, self.mock_supermarket)
 
         assert expected_return_value == returned_value
+
