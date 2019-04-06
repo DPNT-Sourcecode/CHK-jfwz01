@@ -45,6 +45,7 @@ class CalculateTotalCheckoutValue(object):
 
         if stock_keeping_unit:
             if quantity in stock_keeping_unit.special_offers:
-                return stock_keeping_unit[quantity]
+                return stock_keeping_unit.special_offers[quantity]
             return stock_keeping_unit.price * quantity
         return 0
+
