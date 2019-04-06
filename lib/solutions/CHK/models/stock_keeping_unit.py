@@ -1,6 +1,6 @@
 
-class StockKeepUnits(object):
-    """ StockKeepUnits contains the info of a supermarket item (price, special offers).
+class StockKeepUnit(object):
+    """ StockKeepUnit contains the info of a supermarket item (price, special offers).
 
     Attributes:
         name (str): name of the supermarket item.
@@ -12,3 +12,4 @@ class StockKeepUnits(object):
         self.name = name
         self.price = price
         self.special_offers = special_offers
+
