@@ -1,5 +1,6 @@
 from lib.solutions.CHK.handlers.checkout_handler import CheckoutHandler
 from lib.solutions.CHK.models.stock_keeping_unit import StockKeepUnit
+from lib.solutions.CHK.models.special_offer import SpecialOffer
 from lib.solutions.CHK.models.supermarket import SuperMarket
 
 
@@ -9,8 +10,8 @@ class TestCheckoutHandler:
 
         Since it's empty it should return 0.
         """
-        item_a = StockKeepUnit('A', 50, {3: 130})
-        item_b = StockKeepUnit('B', 30, {2: 45})
+        item_a = StockKeepUnit('A', 50, SpecialOffer(3, 130))
+        item_b = StockKeepUnit('B', 30, SpecialOffer(2, 45))
         item_c = StockKeepUnit('C', 20, {})
         item_d = StockKeepUnit('D', 15, {})
         mock_supermarket = SuperMarket([item_a, item_b, item_c, item_d])
@@ -26,8 +27,8 @@ class TestCheckoutHandler:
 
         Since it's invalid it should return -1
         """
-        item_a = StockKeepUnit('A', 50, {3: 130})
-        item_b = StockKeepUnit('B', 30, {2: 45})
+        item_a = StockKeepUnit('A', 50, SpecialOffer(3, 130))
+        item_b = StockKeepUnit('B', 30, SpecialOffer(2, 45))
         item_c = StockKeepUnit('C', 20, {})
         item_d = StockKeepUnit('D', 15, {})
         mock_supermarket = SuperMarket([item_a, item_b, item_c, item_d])
@@ -43,8 +44,8 @@ class TestCheckoutHandler:
 
         Since it's invalid it should return -1.
         """
-        item_a = StockKeepUnit('A', 50, {3: 130})
-        item_b = StockKeepUnit('B', 30, {2: 45})
+        item_a = StockKeepUnit('A', 50, SpecialOffer(3, 130))
+        item_b = StockKeepUnit('B', 30, SpecialOffer(2, 45))
         item_c = StockKeepUnit('C', 20, {})
         item_d = StockKeepUnit('D', 15, {})
         mock_supermarket = SuperMarket([item_a, item_b, item_c, item_d])
@@ -60,8 +61,8 @@ class TestCheckoutHandler:
 
         For the mock input provided it should return 50.
         """
-        item_a = StockKeepUnit('A', 50, {3: 130})
-        item_b = StockKeepUnit('B', 30, {2: 45})
+        item_a = StockKeepUnit('A', 50, SpecialOffer(3, 130))
+        item_b = StockKeepUnit('B', 30, SpecialOffer(2, 45))
         item_c = StockKeepUnit('C', 20, {})
         item_d = StockKeepUnit('D', 15, {})
         mock_supermarket = SuperMarket([item_a, item_b, item_c, item_d])
@@ -77,14 +78,15 @@ class TestCheckoutHandler:
 
         For the mock input provided it should return 130+45+20=195.
         """
-        item_a = StockKeepUnit('A', 50, {3: 130})
-        item_b = StockKeepUnit('B', 30, {2: 45})
+        item_a = StockKeepUnit('A', 50, SpecialOffer(3, 130))
+        item_b = StockKeepUnit('B', 30, SpecialOffer(2, 45))
         item_c = StockKeepUnit('C', 20, {})
         item_d = StockKeepUnit('D', 15, {})
         mock_supermarket = SuperMarket([item_a, item_b, item_c, item_d])
         mock_input = 'AAABBC'
 
-        expected_return_value = 115
+        expected_return_value = 195
         returned_value = CheckoutHandler.calculate(mock_input, mock_supermarket)
 
         assert expected_return_value == returned_value
+
