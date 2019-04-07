@@ -21,8 +21,8 @@ class TestCalculateTotalCheckoutValueService:
         item_e = StockKeepUnit('E', 40, special_offers_item_e)
 
         mock_supermarket = SuperMarket([item_a, item_b, item_c, item_d, item_e])
-        input_items_count = {'E': 2}
-        expected_value = 80
+        input_items_count = {'A': 1, 'B': 1, 'C': 1, 'D': 1, 'E': 1}
+        expected_value = 155
 
         service = CalculateTotalCheckoutValueService(input_items_count, mock_supermarket)
         returned_value = service.call()
