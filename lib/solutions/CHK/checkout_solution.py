@@ -14,11 +14,12 @@ def checkout(skus):
     item_b = StockKeepUnit('B', 30, special_offers_item_b)
     item_c = StockKeepUnit('C', 20, {})
     item_d = StockKeepUnit('D', 15, {})
-    item_d = StockKeepUnit('E', 40, {})
+    item_e = StockKeepUnit('E', 40, {})
 
     # create supermarket
-    supermarket = SuperMarket([item_a, item_b, item_c, item_d])
+    supermarket = SuperMarket([item_a, item_b, item_c, item_d, item_e])
 
     return CheckoutHandler.calculate(skus, supermarket)
+
 
 
