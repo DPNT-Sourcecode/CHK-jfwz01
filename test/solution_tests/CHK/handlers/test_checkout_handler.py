@@ -4,6 +4,23 @@ from lib.solutions.CHK.models.supermarket import SuperMarket
 
 
 class TestCheckoutHandler:
+    def test_calculate_empty_input(self):
+        """ Tests the checkout handler calculate function with an empty input
+
+        Since it's empty it should return 0.
+        """
+        item_a = StockKeepUnit('A', 50, {3: 130})
+        item_b = StockKeepUnit('B', 30, {2: 45})
+        item_c = StockKeepUnit('C', 20, {})
+        item_d = StockKeepUnit('D', 15, {})
+        mock_supermarket = SuperMarket([item_a, item_b, item_c, item_d])
+        mock_input = ''
+
+        expected_return_value = 0
+        returned_value = CheckoutHandler.calculate(mock_input, mock_supermarket)
+
+        assert expected_return_value == returned_value
+
     def test_calculate_invalid_input_only_numbers(self):
         """ Tests the checkout handler calculate function with only numbers input.
 
@@ -71,4 +88,5 @@ class TestCheckoutHandler:
         returned_value = CheckoutHandler.calculate(mock_input, mock_supermarket)
 
         assert expected_return_value == returned_value
+
 
