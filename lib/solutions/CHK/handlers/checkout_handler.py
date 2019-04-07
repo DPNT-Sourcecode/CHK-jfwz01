@@ -1,7 +1,7 @@
 import re
 
 from solutions.CHK.services.get_item_count_service import GetItemCountService
-from solutions.CHK.services.calculate_total_checkout_value_service import CalculateTotalCheckoutValue
+from solutions.CHK.services.calculate_total_checkout_value_service import CalculateTotalCheckoutValueService
 
 
 class CheckoutHandler(object):
@@ -22,6 +22,7 @@ class CheckoutHandler(object):
         if not re.match("^[A-Z]*$", checkout_input):
             return -1
 
-        checkout_items_count = GetInpuValuesService(checkout_input).call()
+        checkout_items_count = GetItemCountService(checkout_input).call()
 
-        return CalculateTotalCheckoutValue(checkout_items_count, supermarket).call()
+        return CalculateTotalCheckoutValueService(checkout_items_count, supermarket).call()
+
