@@ -14,7 +14,7 @@ class TestCalculateTotalCheckoutValueService:
 
         self.mock_supermarket = SuperMarket([item_a, item_b, item_c, item_d])
 
-    def test_with_input_values_all_single_quantity(self):
+    def test_calculate_total_checkout_value_service_with_same_items_count(self):
         """ Tests calculating the checkout value with single quantity items.
 
         For the provided mock values should return:
@@ -28,13 +28,13 @@ class TestCalculateTotalCheckoutValueService:
 
         assert returned_value, expected_value
 
-    def test_with_input_values_single_and_multiple_quantity(self):
+    def test_calculate_total_checkout_value_service_with_different_items_count(self):
         """ Tests calculating the checkout value with single and multiple quantity items.
 
         For the provided mock values should return:
             130 + 30 + 40 + 20 = 220
         """
-        input_items_count = {'A': 3, 'B', 2, 'C': 1, 'D': 1}
+        input_items_count = {'A': 3, 'B': 2, 'C': 1, 'D': 1}
         expected_value = 220
 
         service = CalculateTotalCheckoutValue(input_items_count, self.mock_supermarket)
@@ -42,17 +42,4 @@ class TestCalculateTotalCheckoutValueService:
 
         assert returned_value, expected_value
 
-    def test_with_input_values_all_multiple_quantity(self):
-        """ Tests calculating the checkout value with multiple quantity items.
-
-        For the provided mock values should return:
-            260 + 45 + 40 + 30 = 245
-        """
-        input_items_count = {'A': 6, 'B': 2, 'C': 2, 'D': 2}
-        expected_value = 375
-
-        service = CalculateTotalCheckoutValue(input_items_count, self.mock_supermarket)
-        returned_value = service.call()
-
-        assert returned_value, expected_value
 
