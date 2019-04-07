@@ -33,4 +33,3 @@ class TestGetItemCountService:
 
         assert expected_return_value == returned_value
 
-

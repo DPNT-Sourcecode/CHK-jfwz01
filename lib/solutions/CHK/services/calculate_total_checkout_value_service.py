@@ -20,6 +20,6 @@ class CalculateTotalCheckoutValue(object):
                 break
             if not item.special_offers:
                 total_checkout_value += item.price * count
-        return total_checkout_value
 
+        return total_checkout_value
 
