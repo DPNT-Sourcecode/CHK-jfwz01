@@ -62,4 +62,3 @@ class CalculateTotalCheckoutValueService:
         if free_item.name in self.checkout_items_count:
             return True
         return False
-
