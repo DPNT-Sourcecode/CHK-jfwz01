@@ -18,6 +18,3 @@ class StockKeepUnit:
         :return: List of <SpecialOffer> sorted in descending order of item count.
         """
         return sorted(self.special_offers, key=lambda special_offer: special_offer.count, reverse=True)
-
-
-

@@ -43,6 +43,3 @@ class CalculateTotalCheckoutValueService:
                 count -= special_offer.count
 
         return item_total_value + (count * item.price)
-
-
-
