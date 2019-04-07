@@ -1,5 +1,6 @@
 from solutions.CHK.models.supermarket import SuperMarket
 from solutions.CHK.models.stock_keeping_unit import StockKeepUnit
+from solutions.CHK.models.special_offer import SpecialOffer
 from solutions.CHK.handlers.checkout_handler import CheckoutHandler
 
 
@@ -7,8 +8,10 @@ from solutions.CHK.handlers.checkout_handler import CheckoutHandler
 # skus = unicode string
 def checkout(skus):
     # create start stock keeping_units
-    item_a = StockKeepUnit('A', 50, {3: 130})
-    item_b = StockKeepUnit('B', 30, {2: 45})
+    special_offer_item_a = SpecialOffer(3, 130)
+    special_offer_item_b = SpecialOffer(2, 45)
+    item_a = StockKeepUnit('A', 50, special_offer_item_a)
+    item_b = StockKeepUnit('B', 30, special_offer_item_b)
     item_c = StockKeepUnit('C', 20, {})
     item_d = StockKeepUnit('D', 15, {})
 
@@ -16,3 +19,4 @@ def checkout(skus):
     supermarket = SuperMarket([item_a, item_b, item_c, item_d])
 
     return CheckoutHandler.calculate(skus, supermarket)
+
