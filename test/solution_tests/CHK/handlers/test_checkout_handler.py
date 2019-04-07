@@ -4,23 +4,20 @@ from lib.solutions.CHK.models.supermarket import SuperMarket
 
 
 class TestCheckoutHandler:
-    def __init__(self):
-        item_a = StockKeepUnit('A', 50, {3: 130})
-        item_b = StockKeepUnit('B', 30, {2: 45})
-        item_c = StockKeepUnit('C', 20, {})
-        item_d = StockKeepUnit('D', 15, {})
-
-        self.mock_supermarket = SuperMarket([item_a, item_b, item_c, item_d])
-
     def test_calculate_invalid_input_only_numbers(self):
         """ Tests the checkout handler calculate function with only numbers input.
 
         Since it's invalid it should return -1
         """
+        item_a = StockKeepUnit('A', 50, {3: 130})
+        item_b = StockKeepUnit('B', 30, {2: 45})
+        item_c = StockKeepUnit('C', 20, {})
+        item_d = StockKeepUnit('D', 15, {})
+        mock_supermarket = SuperMarket([item_a, item_b, item_c, item_d])
         mock_input = '123'
-        expected_return_value = -1
 
-        returned_value = CheckoutHandler.calculate(mock_input, self.mock_supermarket)
+        expected_return_value = -1
+        returned_value = CheckoutHandler.calculate(mock_input, mock_supermarket)
 
         assert expected_return_value == returned_value
 
@@ -29,10 +26,15 @@ class TestCheckoutHandler:
 
         Since it's invalid it should return -1.
         """
+        item_a = StockKeepUnit('A', 50, {3: 130})
+        item_b = StockKeepUnit('B', 30, {2: 45})
+        item_c = StockKeepUnit('C', 20, {})
+        item_d = StockKeepUnit('D', 15, {})
+        mock_supermarket = SuperMarket([item_a, item_b, item_c, item_d])
         mock_input = 'ABCDa'
-        expected_return_value = -1
 
-        returned_value = CheckoutHandler.calculate(mock_input, self.mock_supermarket)
+        expected_return_value = -1
+        returned_value = CheckoutHandler.calculate(mock_input, mock_supermarket)
 
         assert expected_return_value == returned_value
 
@@ -41,21 +43,32 @@ class TestCheckoutHandler:
 
         For the mock input provided it should return 50.
         """
+        item_a = StockKeepUnit('A', 50, {3: 130})
+        item_b = StockKeepUnit('B', 30, {2: 45})
+        item_c = StockKeepUnit('C', 20, {})
+        item_d = StockKeepUnit('D', 15, {})
+        mock_supermarket = SuperMarket([item_a, item_b, item_c, item_d])
         mock_input = 'A'
-        expected_return_value = 50
 
-        returned_value = CheckoutHandler.calculate(mock_input, self.mock_supermarket)
+        expected_return_value = 50
+        returned_value = CheckoutHandler.calculate(mock_input, mock_supermarket)
 
         assert expected_return_value == returned_value
 
     def test_calculate_valid_input_multiple_items(self):
         """ Tests the checkout handler calculate function a multiple items in the input.
 
-        For the mock input provided it should return 50+45+20=115.
+        For the mock input provided it should return 130+45+20=195.
         """
-        mock_input = 'A2BC'
-        expected_return_value = 115
+        item_a = StockKeepUnit('A', 50, {3: 130})
+        item_b = StockKeepUnit('B', 30, {2: 45})
+        item_c = StockKeepUnit('C', 20, {})
+        item_d = StockKeepUnit('D', 15, {})
+        mock_supermarket = SuperMarket([item_a, item_b, item_c, item_d])
+        mock_input = 'AAABBC'
 
-        returned_value = CheckoutHandler.calculate(mock_input, self.mock_supermarket)
+        expected_return_value = 115
+        returned_value = CheckoutHandler.calculate(mock_input, mock_supermarket)
 
         assert expected_return_value == returned_value
+
