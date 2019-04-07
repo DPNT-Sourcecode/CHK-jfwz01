@@ -1,5 +1,6 @@
-from lib.solutions.CHK.services.calculate_total_checkout_value_service import CalculateTotalCheckoutValue
+from lib.solutions.CHK.services.calculate_total_checkout_value_service import CalculateTotalCheckoutValueService
 from lib.solutions.CHK.models.stock_keeping_unit import StockKeepUnit
+from lib.solutions.CHK.models.special_offer import SpecialOffer
 from lib.solutions.CHK.models.supermarket import SuperMarket
 
 
@@ -11,6 +12,7 @@ class TestCalculateTotalCheckoutValueService:
         item_b = StockKeepUnit('B', 30, special_offer_item_b)
         item_c = StockKeepUnit('C', 20, {})
         item_d = StockKeepUnit('D', 15, {})
+        print('passed here')
 
         self.mock_supermarket = SuperMarket([item_a, item_b, item_c, item_d])
 
@@ -23,7 +25,7 @@ class TestCalculateTotalCheckoutValueService:
         input_items_count = {'A': 1, 'B': 1, 'C': 1, 'D': 1}
         expected_value = 115
 
-        service = CalculateTotalCheckoutValue(input_items_count, self.mock_supermarket)
+        service = CalculateTotalCheckoutValueService(input_items_count, self.mock_supermarket)
         returned_value = service.call()
 
         assert returned_value, expected_value
@@ -37,9 +39,7 @@ class TestCalculateTotalCheckoutValueService:
         input_items_count = {'A': 3, 'B': 2, 'C': 1, 'D': 1}
         expected_value = 220
 
-        service = CalculateTotalCheckoutValue(input_items_count, self.mock_supermarket)
+        service = CalculateTotalCheckoutValueService(input_items_count, self.mock_supermarket)
         returned_value = service.call()
 
         assert returned_value, expected_value
-
-
