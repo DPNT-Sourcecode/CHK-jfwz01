@@ -7,7 +7,8 @@ class StockKeepUnit:
         price (int): price of the item.
         special_offer (<SpecialOffer>): different price if you buy X ammount of items.
     """
-    def __init__(self, name, price, special_offer):
+    def __init__(self, name, price, special_offers):
         self.name = name
         self.price = price
-        self.special_offer = special_offer
+        self.special_offers = special_offers
+
