@@ -11,4 +11,3 @@ class StockKeepUnit:
         self.name = name
         self.price = price
         self.special_offer = special_offer
-

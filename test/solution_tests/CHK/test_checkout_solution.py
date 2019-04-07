@@ -29,4 +29,3 @@ class TestCheckoutSolution:
         returned_value = checkout(mock_input)
 
         assert expected_value == returned_value
-

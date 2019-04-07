@@ -24,4 +24,3 @@ class GetItemCountService:
             else:
                 inputs_values_count[input_value] = 1
         return inputs_values_count
-

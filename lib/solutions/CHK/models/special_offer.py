@@ -9,4 +9,3 @@ class SpecialOffer:
     def __init__(self, count, price):
         self.count = count
         self.price = price
-

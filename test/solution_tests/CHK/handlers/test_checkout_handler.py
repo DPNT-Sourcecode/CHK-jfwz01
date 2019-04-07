@@ -89,4 +89,3 @@ class TestCheckoutHandler:
         returned_value = CheckoutHandler.calculate(mock_input, mock_supermarket)
 
         assert expected_return_value == returned_value
-

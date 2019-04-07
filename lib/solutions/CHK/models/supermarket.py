@@ -32,4 +32,3 @@ class SuperMarket:
             if stock_keeping_unit.name == name:
                 return stock_keeping_unit
         return None
-

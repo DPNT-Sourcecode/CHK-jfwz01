@@ -42,4 +42,3 @@ class CalculateTotalCheckoutValueService:
 
         return item_total_value + (count * item.price)
 
-
