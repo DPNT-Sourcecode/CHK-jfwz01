@@ -11,4 +11,3 @@ class SpecialOffer:
         self.count = count
         self.price = price
         self.free_item = free_item
-

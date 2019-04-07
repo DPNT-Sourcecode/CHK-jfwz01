@@ -21,4 +21,3 @@ def checkout(skus):
     supermarket = SuperMarket([item_a, item_b, item_c, item_d, item_e])
 
     return CheckoutHandler.calculate(skus, supermarket)
-

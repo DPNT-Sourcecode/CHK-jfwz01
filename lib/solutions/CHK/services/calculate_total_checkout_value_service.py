@@ -43,6 +43,7 @@ class CalculateTotalCheckoutValueService:
                 free_item = special_offer.free_item
 
                 if free_item and self._free_item_is_in_checkout_items(free_item):
+                    item_total_checkout_value += item.price * special_offer.count
                     item_total_checkout_value -= free_item.price
                 else:
                     item_total_checkout_value += special_offer.price
@@ -59,4 +60,3 @@ class CalculateTotalCheckoutValueService:
         if free_item.name in self.checkout_items_count:
             return True
         return False
-
