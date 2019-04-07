@@ -21,12 +21,12 @@ class CalculateTotalCheckoutValueService:
             if not item.special_offers:
                 total_checkout_value += item.price * count
             else:
-                total_checkout_value += self._get_item_total_value_with_special_offers(item, count)
+                total_checkout_value += self._get_item_total_value_with_several_special_offers(item, count)
 
         return total_checkout_value
 
     @staticmethod
-    def _get_item_total_value_with_special_offers(item, count):
+    def _get_item_total_value_with_several_special_offers(item, count):
         """ Returns the total value needed to pay for a StockKeepingUnit item that has a special offer.
         :param item: stock keeping unit present in the supermarket.
         :type item: <StockKeepingUnit>
@@ -37,10 +37,15 @@ class CalculateTotalCheckoutValueService:
         item_total_value = 0
         special_offers = item.get_special_offers_sorted_by_item_count()
 
+        for special_offer in special_offers:
+
         while count >= special_offer.count:
             item_total_value += special_offer.price
             count -= special_offer.count
 
         return item_total_value + (count * item.price)
+
+    @staticmethod
+    def _get_best_price_from_special_offer(special_offer, count):
 
 
