@@ -1,5 +1,5 @@
 
-class CalculateTotalCheckoutValueService(object):
+class CalculateTotalCheckoutValueService:
     """ Calculates the total checkout value
     Attributes:
         checkout_items_count(list(str)): list containing all the items to be purchased.
@@ -41,4 +41,5 @@ class CalculateTotalCheckoutValueService(object):
             count -= special_offer.count
 
         return item_total_value + (count * item.price)
+
 

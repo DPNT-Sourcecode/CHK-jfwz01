@@ -4,7 +4,7 @@ from solutions.CHK.services.get_item_count_service import GetItemCountService
 from solutions.CHK.services.calculate_total_checkout_value_service import CalculateTotalCheckoutValueService
 
 
-class CheckoutHandler(object):
+class CheckoutHandler:
     @classmethod
     def calculate(cls, checkout_input, supermarket):
         """ Calculates the total checkout value the client will have to pay.
@@ -25,3 +25,4 @@ class CheckoutHandler(object):
         checkout_items_count = GetItemCountService(checkout_input).call()
 
         return CalculateTotalCheckoutValueService(checkout_items_count, supermarket).call()
+

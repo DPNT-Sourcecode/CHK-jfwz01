@@ -1,5 +1,5 @@
 
-class SuperMarket(object):
+class SuperMarket:
     """ SuperMarket contains the info on all the stock_keeping_units present in a supermarket.
 
     Attributes:
@@ -32,3 +32,4 @@ class SuperMarket(object):
             if stock_keeping_unit.name == name:
                 return stock_keeping_unit
         return None
+

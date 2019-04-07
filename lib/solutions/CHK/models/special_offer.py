@@ -1,5 +1,5 @@
 
-class SpecialOffer(object):
+class SpecialOffer:
     """ Represents a special offer that can be done by a supermarket.
 
     Attributes:
@@ -9,3 +9,4 @@ class SpecialOffer(object):
     def __init__(self, count, price):
         self.count = count
         self.price = price
+

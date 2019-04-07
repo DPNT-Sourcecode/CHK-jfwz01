@@ -1,7 +1,7 @@
 import re
 
 
-class GetItemCountService(object):
+class GetItemCountService:
     """ GetInputValuesService parses the input string provided and returns a dict containing the count of each item.
 
     Attributes:
@@ -24,3 +24,4 @@ class GetItemCountService(object):
             else:
                 inputs_values_count[input_value] = 1
         return inputs_values_count
+
