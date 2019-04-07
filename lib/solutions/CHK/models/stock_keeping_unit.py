@@ -13,10 +13,11 @@ class StockKeepUnit:
         self.price = price
         self.special_offers = special_offers
 
-    def _get_special_offers_sorted_by_item_count(self):
+    def get_special_offers_sorted_by_item_count(self):
         """ Returns the special offers of a StockKeepUnit sorted in descending order of item count.
         :return: List of <SpecialOffer> sorted in descending order of item count.
         """
         return sorted(self.special_offers, key=lambda special_offer: special_offer.count, reverse=True)
+
 
 
