@@ -38,14 +38,11 @@ class CalculateTotalCheckoutValueService:
         special_offers = item.get_special_offers_sorted_by_item_count()
 
         for special_offer in special_offers:
-
-        while count >= special_offer.count:
-            item_total_value += special_offer.price
-            count -= special_offer.count
+            while count >= special_offer.count:
+                item_total_value += special_offer.price
+                count -= special_offer.count
 
         return item_total_value + (count * item.price)
 
-    @staticmethod
-    def _get_best_price_from_special_offer(special_offer, count):
 
 
