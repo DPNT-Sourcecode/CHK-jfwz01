@@ -11,13 +11,14 @@ class TestCalculateTotalCheckoutValueService:
         For the provided mock values should return:
             50+30+20+15+40 = 155
         """
-        special_offers_items_a = [SpecialOffer(3, 130), SpecialOffer(5, 200)]
-        special_offers_items_b = [SpecialOffer(2, 45)]
-        item_a = StockKeepUnit('A', 50, special_offers_items_a)
-        item_b = StockKeepUnit('B', 30, special_offers_items_b)
-        item_c = StockKeepUnit('C', 20, {})
-        item_d = StockKeepUnit('D', 15, {})
-        item_e = StockKeepUnit('E', 40, {})
+        special_offers_item_a = [SpecialOffer(3, 130, None), SpecialOffer(5, 200, None)]
+        special_offers_item_b = [SpecialOffer(2, 45, None)]
+        item_a = StockKeepUnit('A', 50, special_offers_item_a)
+        item_b = StockKeepUnit('B', 30, special_offers_item_b)
+        item_c = StockKeepUnit('C', 20, [])
+        item_d = StockKeepUnit('D', 15, [])
+        special_offers_item_e = [SpecialOffer(2, 0, item_b)]
+        item_e = StockKeepUnit('E', 40, special_offers_item_e)
 
         mock_supermarket = SuperMarket([item_a, item_b, item_c, item_d, item_e])
         input_items_count = {'A': 1, 'B': 1, 'C': 1, 'D': 1, 'E': 1}
@@ -34,13 +35,14 @@ class TestCalculateTotalCheckoutValueService:
         For the provided mock values should return:
             200+130+50+45+40+20 = 505
         """
-        special_offers_items_a = [SpecialOffer(3, 130), SpecialOffer(5, 200)]
-        special_offers_items_b = [SpecialOffer(2, 45)]
-        item_a = StockKeepUnit('A', 50, special_offers_items_a)
-        item_b = StockKeepUnit('B', 30, special_offers_items_b)
-        item_c = StockKeepUnit('C', 20, {})
-        item_d = StockKeepUnit('D', 15, {})
-        item_e = StockKeepUnit('E', 40, {})
+        special_offers_item_a = [SpecialOffer(3, 130, None), SpecialOffer(5, 200, None)]
+        special_offers_item_b = [SpecialOffer(2, 45, None)]
+        item_a = StockKeepUnit('A', 50, special_offers_item_a)
+        item_b = StockKeepUnit('B', 30, special_offers_item_b)
+        item_c = StockKeepUnit('C', 20, [])
+        item_d = StockKeepUnit('D', 15, [])
+        special_offers_item_e = [SpecialOffer(2, 0, item_b)]
+        item_e = StockKeepUnit('E', 40, special_offers_item_e)
 
         mock_supermarket = SuperMarket([item_a, item_b, item_c, item_d, item_e])
         input_items_count = {'A': 9, 'B': 2, 'C': 1, 'D': 1, 'E': 1}
@@ -50,3 +52,4 @@ class TestCalculateTotalCheckoutValueService:
         returned_value = service.call()
 
         assert returned_value, expected_value
+

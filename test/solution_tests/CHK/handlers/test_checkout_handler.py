@@ -10,13 +10,14 @@ class TestCheckoutHandler:
 
         Since it's empty it should return 0.
         """
-        special_offers_items_a = [SpecialOffer(3, 130), SpecialOffer(5, 200)]
-        special_offers_items_b = [SpecialOffer(2, 45)]
-        item_a = StockKeepUnit('A', 50, special_offers_items_a)
-        item_b = StockKeepUnit('B', 30, special_offers_items_b)
-        item_c = StockKeepUnit('C', 20, {})
-        item_d = StockKeepUnit('D', 15, {})
-        item_e = StockKeepUnit('E', 40, {})
+        special_offers_item_a = [SpecialOffer(3, 130, None), SpecialOffer(5, 200, None)]
+        special_offers_item_b = [SpecialOffer(2, 45, None)]
+        item_a = StockKeepUnit('A', 50, special_offers_item_a)
+        item_b = StockKeepUnit('B', 30, special_offers_item_b)
+        item_c = StockKeepUnit('C', 20, [])
+        item_d = StockKeepUnit('D', 15, [])
+        special_offers_item_e = [SpecialOffer(2, 0, item_b)]
+        item_e = StockKeepUnit('E', 40, special_offers_item_e)
         mock_supermarket = SuperMarket([item_a, item_b, item_c, item_d, item_e])
         mock_input = ''
 
@@ -30,13 +31,14 @@ class TestCheckoutHandler:
 
         Since it's invalid it should return -1
         """
-        special_offers_items_a = [SpecialOffer(3, 130), SpecialOffer(5, 200)]
-        special_offers_items_b = [SpecialOffer(2, 45)]
-        item_a = StockKeepUnit('A', 50, special_offers_items_a)
-        item_b = StockKeepUnit('B', 30, special_offers_items_b)
-        item_c = StockKeepUnit('C', 20, {})
-        item_d = StockKeepUnit('D', 15, {})
-        item_e = StockKeepUnit('E', 40, {})
+        special_offers_item_a = [SpecialOffer(3, 130, None), SpecialOffer(5, 200, None)]
+        special_offers_item_b = [SpecialOffer(2, 45, None)]
+        item_a = StockKeepUnit('A', 50, special_offers_item_a)
+        item_b = StockKeepUnit('B', 30, special_offers_item_b)
+        item_c = StockKeepUnit('C', 20, [])
+        item_d = StockKeepUnit('D', 15, [])
+        special_offers_item_e = [SpecialOffer(2, 0, item_b)]
+        item_e = StockKeepUnit('E', 40, special_offers_item_e)
         mock_supermarket = SuperMarket([item_a, item_b, item_c, item_d, item_e])
         mock_input = '123'
 
@@ -50,13 +52,14 @@ class TestCheckoutHandler:
 
         Since it's invalid it should return -1.
         """
-        special_offers_items_a = [SpecialOffer(3, 130), SpecialOffer(5, 200)]
-        special_offers_items_b = [SpecialOffer(2, 45)]
-        item_a = StockKeepUnit('A', 50, special_offers_items_a)
-        item_b = StockKeepUnit('B', 30, special_offers_items_b)
-        item_c = StockKeepUnit('C', 20, {})
-        item_d = StockKeepUnit('D', 15, {})
-        item_e = StockKeepUnit('E', 40, {})
+        special_offers_item_a = [SpecialOffer(3, 130, None), SpecialOffer(5, 200, None)]
+        special_offers_item_b = [SpecialOffer(2, 45, None)]
+        item_a = StockKeepUnit('A', 50, special_offers_item_a)
+        item_b = StockKeepUnit('B', 30, special_offers_item_b)
+        item_c = StockKeepUnit('C', 20, [])
+        item_d = StockKeepUnit('D', 15, [])
+        special_offers_item_e = [SpecialOffer(2, 0, item_b)]
+        item_e = StockKeepUnit('E', 40, special_offers_item_e)
         mock_supermarket = SuperMarket([item_a, item_b, item_c, item_d, item_e])
         mock_input = 'ABCDa'
 
@@ -70,13 +73,14 @@ class TestCheckoutHandler:
 
         For the mock input provided it should return 50.
         """
-        special_offers_items_a = [SpecialOffer(3, 130), SpecialOffer(5, 200)]
-        special_offers_items_b = [SpecialOffer(2, 45)]
-        item_a = StockKeepUnit('A', 50, special_offers_items_a)
-        item_b = StockKeepUnit('B', 30, special_offers_items_b)
-        item_c = StockKeepUnit('C', 20, {})
-        item_d = StockKeepUnit('D', 15, {})
-        item_e = StockKeepUnit('E', 40, {})
+        special_offers_item_a = [SpecialOffer(3, 130, None), SpecialOffer(5, 200, None)]
+        special_offers_item_b = [SpecialOffer(2, 45, None)]
+        item_a = StockKeepUnit('A', 50, special_offers_item_a)
+        item_b = StockKeepUnit('B', 30, special_offers_item_b)
+        item_c = StockKeepUnit('C', 20, [])
+        item_d = StockKeepUnit('D', 15, [])
+        special_offers_item_e = [SpecialOffer(2, 0, item_b)]
+        item_e = StockKeepUnit('E', 40, special_offers_item_e)
         mock_supermarket = SuperMarket([item_a, item_b, item_c, item_d, item_e])
         mock_input = 'A'
 
@@ -90,13 +94,14 @@ class TestCheckoutHandler:
 
         For the mock input provided it should return 130+45+20=195.
         """
-        special_offers_items_a = [SpecialOffer(3, 130), SpecialOffer(5, 200)]
-        special_offers_items_b = [SpecialOffer(2, 45)]
-        item_a = StockKeepUnit('A', 50, special_offers_items_a)
-        item_b = StockKeepUnit('B', 30, special_offers_items_b)
-        item_c = StockKeepUnit('C', 20, {})
-        item_d = StockKeepUnit('D', 15, {})
-        item_e = StockKeepUnit('E', 40, {})
+        special_offers_item_a = [SpecialOffer(3, 130, None), SpecialOffer(5, 200, None)]
+        special_offers_item_b = [SpecialOffer(2, 45, None)]
+        item_a = StockKeepUnit('A', 50, special_offers_item_a)
+        item_b = StockKeepUnit('B', 30, special_offers_item_b)
+        item_c = StockKeepUnit('C', 20, [])
+        item_d = StockKeepUnit('D', 15, [])
+        special_offers_item_e = [SpecialOffer(2, 0, item_b)]
+        item_e = StockKeepUnit('E', 40, special_offers_item_e)
         mock_supermarket = SuperMarket([item_a, item_b, item_c, item_d, item_e])
         mock_input = 'AAABBC'
 
@@ -104,3 +109,4 @@ class TestCheckoutHandler:
         returned_value = CheckoutHandler.calculate(mock_input, mock_supermarket)
 
         assert expected_return_value == returned_value
+
